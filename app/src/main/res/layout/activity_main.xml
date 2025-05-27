@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#FFF8E1">
+
+    <Button
+        android:id="@+id/btnHabitos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📋 Ver Hábitos"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnDias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📅 Ver Días"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnHabitoDia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔗 Relacionar Hábito-Día" />
+
+</LinearLayout>
