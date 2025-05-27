@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import java.util.List;
 public class HabitoDiaActivity extends AppCompatActivity {
 
     Spinner spinnerHabito, spinnerDia;
+    EditText edtNota;
     CheckBox checkCompletado;
     Button btnGuardar;
     RecyclerView recyclerView;
@@ -37,6 +39,7 @@ public class HabitoDiaActivity extends AppCompatActivity {
         spinnerHabito = findViewById(R.id.spinnerHabito);
         spinnerDia = findViewById(R.id.spinnerDia);
         checkCompletado = findViewById(R.id.checkCompletado);
+        edtNota = findViewById(R.id.edtNotaDia);
         btnGuardar = findViewById(R.id.btnGuardarRelacion);
         recyclerView = findViewById(R.id.recyclerRelaciones);
 
@@ -46,9 +49,10 @@ public class HabitoDiaActivity extends AppCompatActivity {
 
         btnGuardar.setOnClickListener(v -> {
             HabitoDia relacion = new HabitoDia();
-            relacion.habitoId = habitos.get(spinnerHabito.getSelectedItemPosition()).habitoId;
-            relacion.diaId = dias.get(spinnerDia.getSelectedItemPosition()).diaId;
-            relacion.completado = checkCompletado.isChecked();
+            relacion.id_habito = habitos.get(spinnerHabito.getSelectedItemPosition()).id_habito;
+            relacion.id_dia = dias.get(spinnerDia.getSelectedItemPosition()).id_dia;
+            relacion.estado = checkCompletado.isChecked() ? "completado" : "pendiente";
+            relacion.nota_dia = edtNota.getText().toString();
 
             db.habitoDiaDao().insertar(relacion);
             cargarRelaciones();
@@ -72,7 +76,7 @@ public class HabitoDiaActivity extends AppCompatActivity {
 
     private void cargarRelaciones() {
         relaciones = db.habitoDiaDao().obtenerTodas();
-        RelacionAdapter adapter = new RelacionAdapter(relaciones, habitos, dias);
+        RelacionAdapter adapter = new RelacionAdapter(this, relaciones, habitos, dias, db);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }

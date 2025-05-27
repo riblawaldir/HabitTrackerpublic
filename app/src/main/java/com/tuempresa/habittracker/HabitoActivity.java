@@ -53,14 +53,15 @@ public class HabitoActivity extends AppCompatActivity {
 
         EditText edtNombre = dialogView.findViewById(R.id.edtNombre);
         EditText edtDescripcion = dialogView.findViewById(R.id.edtDescripcion);
+        EditText edtPrioridad = dialogView.findViewById(R.id.edtPrioridad);
+        EditText edtFrecuencia = dialogView.findViewById(R.id.edtFrecuencia);
 
         builder.setPositiveButton("Guardar", (dialog, which) -> {
-            String nombre = edtNombre.getText().toString();
-            String descripcion = edtDescripcion.getText().toString();
-
             Habito nuevo = new Habito();
-            nuevo.nombre = nombre;
-            nuevo.descripcion = descripcion;
+            nuevo.nombre = edtNombre.getText().toString();
+            nuevo.descripcion = edtDescripcion.getText().toString();
+            nuevo.prioridad = edtPrioridad.getText().toString();
+            nuevo.frecuencia = edtFrecuencia.getText().toString();
 
             db.habitoDao().insertar(nuevo);
             recargarLista();
@@ -69,6 +70,7 @@ public class HabitoActivity extends AppCompatActivity {
         builder.setNegativeButton("Cancelar", null);
         builder.show();
     }
+
 
     private void recargarLista() {
         listaHabitos.clear();

@@ -10,6 +10,7 @@ import com.tuempresa.habittracker.model.Habito;
 
 import java.util.List;
 
+
 @Dao
 public interface HabitoDao {
     @Insert
@@ -24,3 +25,4 @@ public interface HabitoDao {
     @Query("SELECT * FROM Habito")
     List<Habito> obtenerTodos();
 }
+

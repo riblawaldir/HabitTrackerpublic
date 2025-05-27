@@ -7,10 +7,12 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Habito {
     @PrimaryKey(autoGenerate = true)
-    public int habitoId;
+    public int id_habito;
 
     @NonNull
     public String nombre;
 
     public String descripcion;
+    public String prioridad;
+    public String frecuencia;
 }

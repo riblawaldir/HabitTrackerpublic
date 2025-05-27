@@ -45,13 +45,21 @@ public class DiaActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Nuevo Día");
 
-        EditText input = new EditText(this);
-        input.setHint("Formato: YYYY-MM-DD");
-        builder.setView(input);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_nuevo_dia, null);
+        builder.setView(dialogView);
+
+        EditText edtFecha = dialogView.findViewById(R.id.edtFecha);
+        EditText edtHora = dialogView.findViewById(R.id.edtHora);
+        EditText edtEstado = dialogView.findViewById(R.id.edtEstadoAnimo);
+        EditText edtComentario = dialogView.findViewById(R.id.edtComentario);
 
         builder.setPositiveButton("Guardar", (dialog, which) -> {
             Dia nuevo = new Dia();
-            nuevo.fecha = input.getText().toString();
+            nuevo.fecha = edtFecha.getText().toString();
+            nuevo.hora = edtHora.getText().toString();  // Nuevo campo
+            nuevo.estado_animo = edtEstado.getText().toString();
+            nuevo.comentario = edtComentario.getText().toString();
+
             db.diaDao().insertar(nuevo);
             recargarLista();
         });
@@ -59,6 +67,8 @@ public class DiaActivity extends AppCompatActivity {
         builder.setNegativeButton("Cancelar", null);
         builder.show();
     }
+
+
 
     private void recargarLista() {
         listaDias.clear();

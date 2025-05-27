@@ -1,7 +1,5 @@
 package com.tuempresa.habittracker;
 
-
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tuempresa.habittracker.database.AppDatabase;
-import com.tuempresa.   habittracker.model.Dia;
+import com.tuempresa.habittracker.model.Dia;
 
 import java.util.List;
 
@@ -40,7 +38,7 @@ public class DiaAdapter extends RecyclerView.Adapter<DiaAdapter.DiaViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull DiaViewHolder holder, int position) {
         Dia dia = listaDias.get(position);
-        holder.txtFecha.setText(dia.fecha);
+        holder.txtFecha.setText(dia.fecha);  // ← CORREGIDO
 
         holder.itemView.setOnClickListener(v -> mostrarDialogoEditar(dia));
         holder.itemView.setOnLongClickListener(v -> {
@@ -68,11 +66,11 @@ public class DiaAdapter extends RecyclerView.Adapter<DiaAdapter.DiaViewHolder> {
         builder.setTitle("Editar Día");
 
         EditText edt = new EditText(context);
-        edt.setText(dia.fecha);
+        edt.setText(dia.fecha);  // ← CORREGIDO
         builder.setView(edt);
 
         builder.setPositiveButton("Actualizar", (dialog, which) -> {
-            dia.fecha = edt.getText().toString();
+            dia.fecha = edt.getText().toString();  // ← CORREGIDO
             db.diaDao().actualizar(dia);
             recargar();
         });
@@ -99,4 +97,3 @@ public class DiaAdapter extends RecyclerView.Adapter<DiaAdapter.DiaViewHolder> {
         notifyDataSetChanged();
     }
 }
-

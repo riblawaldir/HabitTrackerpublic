@@ -1,6 +1,5 @@
 package com.tuempresa.habittracker.model;
 
-
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -8,8 +7,13 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Dia {
     @PrimaryKey(autoGenerate = true)
-    public int diaId;
+    public int id_dia;
 
     @NonNull
-    public String fecha; // Formato: "2025-05-26"
+    public String fecha;  // Ej: 2025-05-27
+
+    public String hora;   // NUEVO campo, Ej: 07:30
+
+    public String estado_animo;
+    public String comentario;
 }

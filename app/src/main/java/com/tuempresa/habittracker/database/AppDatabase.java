@@ -15,7 +15,7 @@ import com.tuempresa.habittracker.model.Dia;
 import com.tuempresa.habittracker.model.Habito;
 import com.tuempresa.habittracker.model.HabitoDia;
 
-@Database(entities = {Habito.class, Dia.class, HabitoDia.class}, version = 1)
+@Database(entities = {Habito.class, Dia.class, HabitoDia.class}, version = 3)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instancia;
@@ -28,11 +28,12 @@ public abstract class AppDatabase extends RoomDatabase {
         if (instancia == null) {
             instancia = Room.databaseBuilder(context.getApplicationContext(),
                             AppDatabase.class, "habit_tracker_db")
-                    .allowMainThreadQueries() // Solo para pruebas. Luego usar async
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration() // ← Esta línea evita errores si cambias las entidades
+                    .allowMainThreadQueries()          // ← Solo para apps simples o en pruebas
                     .build();
         }
         return instancia;
     }
 }
+
 

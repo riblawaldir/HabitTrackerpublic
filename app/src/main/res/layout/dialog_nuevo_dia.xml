@@ -5,26 +5,27 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/edtNombre"
+        android:id="@+id/edtFecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre del hábito" />
+        android:hint="Formato: YYYY-MM-DD" />
 
     <EditText
-        android:id="@+id/edtDescripcion"
+        android:id="@+id/edtHora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción" />
+        android:hint="Hora (HH:mm)" />
+    <EditText
+        android:id="@+id/edtEstadoAnimo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Estado de ánimo" />
 
     <EditText
-        android:id="@+id/edtPrioridad"
+        android:id="@+id/edtComentario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Prioridad (alta/media/baja)" />
-
-    <EditText
-        android:id="@+id/edtFrecuencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Frecuencia (diaria/semanal/etc.)" />
+        android:hint="Comentario sobre el día"
+        android:lines="3"
+        android:inputType="textMultiLine"/>
 </LinearLayout>

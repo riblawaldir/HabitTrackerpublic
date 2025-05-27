@@ -1,12 +1,12 @@
 package com.tuempresa.habittracker.model;
 
-
 import androidx.room.Entity;
 
-@Entity(primaryKeys = {"habitoId", "diaId"})
+@Entity(primaryKeys = {"id_habito", "id_dia"})
 public class HabitoDia {
-    public int habitoId;
-    public int diaId;
+    public int id_habito;
+    public int id_dia;
 
-    public boolean completado;
+    public String estado;     // "pendiente", "completado", etc.
+    public String nota_dia;
 }
