@@ -23,6 +23,9 @@
             android:exported="false"
             android:theme="@style/Theme.HabitTracker" />
         <activity
+            android:name=".ResumenActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

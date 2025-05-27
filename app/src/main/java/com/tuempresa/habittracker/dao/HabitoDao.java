@@ -24,5 +24,11 @@ public interface HabitoDao {
 
     @Query("SELECT * FROM Habito")
     List<Habito> obtenerTodos();
+    @Query("SELECT COUNT(*) FROM Habito")
+    int contar();
+
+    @Query("SELECT * FROM Habito WHERE id_habito = :id")
+    Habito buscarPorId(int id);
+
 }
 

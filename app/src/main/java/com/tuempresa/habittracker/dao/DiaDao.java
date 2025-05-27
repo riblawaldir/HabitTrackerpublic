@@ -24,5 +24,8 @@ public interface DiaDao {
 
     @Query("SELECT * FROM Dia")
     List<Dia> obtenerTodos();
+    @Query("SELECT COUNT(*) FROM Dia")
+    int contar();
+
 }
 

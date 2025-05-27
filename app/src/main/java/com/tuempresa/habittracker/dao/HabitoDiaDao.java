@@ -24,5 +24,12 @@ public interface HabitoDiaDao {
 
     @Query("SELECT * FROM HabitoDia")
     List<HabitoDia> obtenerTodas();
+
+    @Query("SELECT COUNT(*) FROM HabitoDia")
+    int contar();
+
+    @Query("DELETE FROM HabitoDia WHERE id_habito = :habitoId")
+    void eliminarPorHabitoId(int habitoId);
+
 }
 

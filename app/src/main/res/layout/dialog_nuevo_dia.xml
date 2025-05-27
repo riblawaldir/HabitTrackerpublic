@@ -1,31 +1,48 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="16dp"
+    android:padding="24dp"
+    android:background="#F3E5F5"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <EditText
         android:id="@+id/edtFecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Formato: YYYY-MM-DD" />
+        android:hint="Fecha (YYYY-MM-DD)"
+        android:background="@drawable/edittext_morado"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="12dp" />
 
     <EditText
         android:id="@+id/edtHora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hora (HH:mm)" />
+        android:hint="Hora (HH:mm)"
+        android:background="@drawable/edittext_morado"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="12dp" />
+
     <EditText
         android:id="@+id/edtEstadoAnimo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Estado de ánimo" />
+        android:hint="Estado de ánimo"
+        android:background="@drawable/edittext_morado"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="12dp" />
 
     <EditText
         android:id="@+id/edtComentario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Comentario sobre el día"
-        android:lines="3"
-        android:inputType="textMultiLine"/>
+        android:background="@drawable/edittext_morado"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:inputType="textMultiLine"
+        android:lines="3" />
 </LinearLayout>

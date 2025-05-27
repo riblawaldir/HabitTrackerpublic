@@ -1,17 +1,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="12dp"
+    android:padding="16dp"
     android:orientation="vertical"
-    android:background="#E3F2FD"
-    android:layout_marginBottom="8dp"
-    android:elevation="2dp">
+    android:background="#F3E5F5"
+    android:layout_marginBottom="12dp"
+    android:layout_marginHorizontal="8dp"
+    android:elevation="3dp">
 
     <TextView
         android:id="@+id/txtFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2025-05-27"
+        android:text="📅 Fecha: 2025-05-27"
+        android:textColor="#4A148C"
+        android:textStyle="bold"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⏰ Hora: 07:30"
+        android:textColor="#333"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🙂 Estado de ánimo: Feliz"
+        android:textColor="#333"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:id="@+id/txtComentario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📝 Comentario: Día productivo"
+        android:textColor="#555" />
 </LinearLayout>
